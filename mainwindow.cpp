@@ -18,7 +18,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->stop_button->setIcon(style()->standardIcon(QStyle::SP_MediaPause));
 
     m_AudioOutput = new QAudioOutput();
-    m_AudioOutput->setVolume(0.2);
+    m_AudioOutput->setVolume(30);
 }
 
 MainWindow::~MainWindow()
@@ -54,7 +54,7 @@ void MainWindow::on_stop_button_clicked()
 void MainWindow::on_song_slider_valueChanged(int value)
 {
     qDebug() << "Current Volume:" << value;
-    float normalized = value / 100;
+    float normalized = value;
     m_AudioOutput->setVolume(normalized);
 }
 
