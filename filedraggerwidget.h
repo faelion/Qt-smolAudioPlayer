@@ -27,7 +27,7 @@ signals:
     void changingSong();
 
 private:
-    QMediaPlayer* m_Player;
+    QMediaPlayer* m_Player = nullptr;
     QString currentSong;
 };
 
